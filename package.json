@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "format": "prettier --write ./src",
-    "prepare": "husky"
+    "prepare": "husky && husky install"
   },
   "dependencies": {
     "react": "^19.0.0",
@@ -35,6 +35,7 @@
     "vite": "^6.3.1"
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+    "**/*": "prettier --write --ignore-unknown",
+    "*.js": "eslint --cache --fix"
   }
 }
