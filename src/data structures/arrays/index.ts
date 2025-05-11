@@ -7,14 +7,10 @@ export class ArrayClass<T extends ArrayValue> {
 
   constructor(...arg: T[]) {
     if (arg.length > 0) {
-      this.data = arg.reduce(
-        (acc, item) => {
-          acc[this.length] = item;
-          this.length++;
-          return acc;
-        },
-        {} as { [index: number]: T }
-      );
+      for (const item of arg) {
+        this.data[this.length] = item;
+        this.length++;
+      }
     }
   }
 
@@ -42,8 +38,8 @@ export class ArrayClass<T extends ArrayValue> {
     return this.data[index];
   }
 
-  getAll() {
-    return Object.values(this.data);
+  getAll(): T[] {
+    return Array.from({ length: this.length }, (_, i) => this.data[i]);
   }
 
   shift() {
@@ -81,24 +77,10 @@ export class ArrayClass<T extends ArrayValue> {
   }
 
   clone(): ArrayClass<T> {
-    if (this.length === 0) {
-      throw new Error('Array is empty');
-    }
-
     const newArray = new ArrayClass<T>();
     for (let i = 0; i < this.length; i++) {
-      const item = this.data[i];
-      if (item === undefined) {
-        throw new Error(`Item at index ${i} is undefined`);
-      }
-
-      newArray.push(item);
+      newArray.push(this.data[i]);
     }
-
-    if (newArray.length !== this.length) {
-      throw new Error('Length of new array does not match old array');
-    }
-
     return newArray;
   }
 }
