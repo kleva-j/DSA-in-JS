@@ -1,4 +1,5 @@
-type ArrayValue = number | string | boolean | null | undefined | symbol;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type ArrayValue = number | string | boolean | null | undefined | symbol | object | Array<unknown>;
 
 export class ArrayClass<T extends ArrayValue> {
   private length = 0;
@@ -37,6 +38,7 @@ export class ArrayClass<T extends ArrayValue> {
   }
 
   get(index: number) {
+    if (index < 0 || index >= this.length) return undefined;
     return this.data[index];
   }
 
@@ -63,8 +65,8 @@ export class ArrayClass<T extends ArrayValue> {
   unshift(...item: T[]) {
     if (item.length === 0) return;
 
-    for (let i = this.length + item.length - 1; i > 0; i--) {
-      this.data[i] = this.data[i - 1];
+    for (let i = this.length + item.length - 1; i >= 0; i--) {
+      this.data[i] = this.data[i - item.length];
     }
 
     for (let i = 0; i < item.length; i++) {
@@ -72,5 +74,31 @@ export class ArrayClass<T extends ArrayValue> {
     }
 
     this.length += item.length;
+  }
+
+  getLength(): number {
+    return this.length;
+  }
+
+  clone(): ArrayClass<T> {
+    if (this.length === 0) {
+      throw new Error('Array is empty');
+    }
+
+    const newArray = new ArrayClass<T>();
+    for (let i = 0; i < this.length; i++) {
+      const item = this.data[i];
+      if (item === undefined) {
+        throw new Error(`Item at index ${i} is undefined`);
+      }
+
+      newArray.push(item);
+    }
+
+    if (newArray.length !== this.length) {
+      throw new Error('Length of new array does not match old array');
+    }
+
+    return newArray;
   }
 }

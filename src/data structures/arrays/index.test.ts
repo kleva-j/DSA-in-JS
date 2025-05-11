@@ -50,6 +50,11 @@ describe('ArrayClass', () => {
     expect(array.get(2)).toBe(3);
   });
 
+  test('get empty', () => {
+    const array = new ArrayClass();
+    expect(array.get(0)).toBe(undefined);
+  });
+
   test('get out of bounds', () => {
     const array = new ArrayClass(1, 2, 3);
     expect(array.get(3)).toBe(undefined);
@@ -89,5 +94,28 @@ describe('ArrayClass', () => {
     const array = new ArrayClass();
     array.unshift(1, 2, 3);
     expect(array.getAll()).toEqual([1, 2, 3]);
+  });
+
+  test('unshift multiple with existing', () => {
+    const array = new ArrayClass<number>(4, 5, 6);
+    array.unshift(1, 2, 3);
+    expect(array.getAll()).toEqual([1, 2, 3, 4, 5, 6]);
+  });
+
+  test('getLength', () => {
+    const array = new ArrayClass(1, 2, 3);
+    expect(array.getLength()).toBe(3);
+  });
+
+  test('clone', () => {
+    const array = new ArrayClass(1, 2, 3);
+    const clonedArray = array.clone();
+    expect(clonedArray.getAll()).toEqual([1, 2, 3]);
+    expect(clonedArray).not.toBe(array);
+  });
+
+  test('clone throws error when array is empty', () => {
+    const array = new ArrayClass();
+    expect(() => array.clone()).toThrowError('Array is empty');
   });
 });
