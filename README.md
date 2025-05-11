@@ -15,3 +15,24 @@ pnpm install
 ```bash
 pnpm run dev
 ```
+
+## Running the tests
+
+```bash
+pnpm run test
+```
+
+## Coverage
+
+```bash
+pnpm run coverage
+```
+
+### Popular Algorithms Solution Patterns
+
+- Sliding Window
+- Two Pointers
+- Fast and Slow Pointers
+- Merge Intervals
+- Cyclic Sort
+- In-place Reversal of a LinkedList
