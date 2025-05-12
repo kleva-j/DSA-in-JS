@@ -42,5 +42,6 @@
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown",
     "*.js": "eslint --cache --fix"
-  }
+  },
+  "packageManager": "pnpm@10.10.0"
 }
