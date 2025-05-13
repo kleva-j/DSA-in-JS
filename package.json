@@ -10,13 +10,27 @@
     "preview": "vite preview",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
     "prepare": "husky",
-    "test": "vitest",
+    "test": "vitest run",
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
+  "keywords": [
+    "dsa",
+    "data-structures",
+    "algorithms",
+    "typescript",
+    "vitest"
+  ],
+  "author": "kleva-j",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kleva-j/dsa-in-js.git"
+  },
+  "homepage": "https://michaelobasi.dev/DSA-in-JS",
   "devDependencies": {
     "@eslint/js": "^9.22.0",
     "@types/node": "^22.15.14",
