@@ -14,10 +14,14 @@
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "@radix-ui/react-collapsible": "^1.1.10",
+    "@radix-ui/react-context-menu": "^2.2.14",
+    "@radix-ui/react-hover-card": "^1.1.13",
     "@radix-ui/react-slot": "^1.2.2",
     "@tailwindcss/vite": "^4.1.6",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "framer-motion": "^12.11.0",
     "lucide-react": "^0.510.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -66,5 +70,5 @@
     "**/*": "prettier --write --ignore-unknown",
     "*.js": "eslint --cache --fix"
   },
-  "packageManager": "pnpm@10.10.0"
+  "packageManager": "pnpm@10.11.0"
 }
