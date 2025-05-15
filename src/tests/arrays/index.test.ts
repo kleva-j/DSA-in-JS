@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
 
-import { ArrayClass } from './index';
+import { ArrayClass } from '../../data-structures/arrays';
 
 describe('ArrayClass', () => {
   test('constructor', () => {
