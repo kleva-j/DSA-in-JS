@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
 
-import Comparator from '../comparator';
+import Comparator from '../../utils/comparator';
 
 describe('Comparator', () => {
   const comparator = new Comparator();

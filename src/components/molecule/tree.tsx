@@ -413,7 +413,9 @@ export function TreeView({
                 <Input
                   placeholder={searchPlaceholder}
                   value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    setSearchQuery(e.target.value)
+                  }
                   className="h-10 pl-9"
                 />
               </div>
