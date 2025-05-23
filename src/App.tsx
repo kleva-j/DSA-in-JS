@@ -1,4 +1,4 @@
-import { buttonVariants } from '@/components/atoms/button';
+import { buttonVariants } from '@/lib/variants';
 import { NavLink, Outlet } from 'react-router';
 import { cn } from '@/lib/utils';
 
@@ -15,7 +15,7 @@ const className = ({ isActive, isPending, isTransitioning }: NavLinkProps) =>
     isTransitioning && 'opacity-50'
   );
 
-function App() {
+export function App() {
   return (
     <section className="bg-background h-screen">
       <div className="container mx-auto h-full flex flex-col gap-4 py-4">

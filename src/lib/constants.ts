@@ -1,30 +1,6 @@
+import { levelMap } from './misc';
+
 export const BASE_PATH = '/dsa-in-js';
-export const TreeViewElements = [
-  {
-    id: '1',
-    name: 'components',
-    children: [
-      {
-        id: '2',
-        name: 'extension',
-        children: [
-          {
-            id: '3',
-            name: 'tree-view.tsx',
-          },
-          {
-            id: '4',
-            name: 'tree-view-api.tsx',
-          },
-        ],
-      },
-      {
-        id: '5',
-        name: 'dashboard-tree.tsx',
-      },
-    ],
-  },
-];
 
 export const treeViewTestData = [
   {
@@ -116,3 +92,17 @@ export const treeViewTestData = [
     ],
   },
 ];
+
+export const algorithmsTree = {
+  id: '1',
+  name: 'Algorithms',
+  children: [],
+  type: levelMap[0],
+};
+
+export const dataStructuresTree = {
+  id: '1',
+  name: 'Data Structures',
+  children: [],
+  type: levelMap[0],
+};
