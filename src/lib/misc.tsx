@@ -31,3 +31,17 @@ export type TreeItem = {
   type: string;
   children?: TreeItem[];
 };
+
+export const algorithmsTree = {
+  id: '1',
+  name: 'Algorithms',
+  children: [],
+  type: levelMap[0],
+};
+
+export const dataStructuresTree = {
+  id: '1',
+  name: 'Data Structures',
+  children: [],
+  type: levelMap[0],
+};

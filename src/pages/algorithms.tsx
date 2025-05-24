@@ -1,7 +1,7 @@
 import type { TreeViewItem } from '@/components/molecule/tree-item';
 import type { Module } from '@/types';
 
-import { algorithmsTree as tree } from '@/lib/constants';
+import { algorithmsTree as tree } from '@/lib/misc';
 
 import { generateTreeItemRecursively } from '@/lib/utils';
 import { customIconMap, menuItems } from '@/lib/misc';

@@ -1,5 +1,3 @@
-import { levelMap } from './misc';
-
 export const BASE_PATH = '/dsa-in-js';
 
 export const treeViewTestData = [
@@ -92,17 +90,3 @@ export const treeViewTestData = [
     ],
   },
 ];
-
-export const algorithmsTree = {
-  id: '1',
-  name: 'Algorithms',
-  children: [],
-  type: levelMap[0],
-};
-
-export const dataStructuresTree = {
-  id: '1',
-  name: 'Data Structures',
-  children: [],
-  type: levelMap[0],
-};
