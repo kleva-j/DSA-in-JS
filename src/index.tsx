@@ -5,7 +5,7 @@ import { DataStructuresPageRoute } from '@/pages/data-structures';
 import { AlgorithmsPageRoute } from '@/pages/algorithms';
 import { createRoot } from 'react-dom/client';
 import { BASE_PATH } from '@/lib/constants';
-import { App } from '@/App';
+import { App } from '@/pages';
 
 import '@/index.css';
 

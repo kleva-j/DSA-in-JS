@@ -1,19 +1,17 @@
 import type { TreeViewItem } from '@/components/molecule/tree-item';
 import type { Module } from '@/types';
 
-import { dataStructuresTree as tree } from '@/lib/misc';
+import { algorithmsTree as tree } from '@/lib/misc';
 
 import { generateTreeItemRecursively } from '@/lib/utils';
 import { customIconMap, menuItems } from '@/lib/misc';
 import { TreeView } from '@/components/molecule/tree';
 
 function loadModuleAndGenerateTreeView() {
-  const module = import.meta.glob('../data-structures/**/*.{ts,tsx,mdx}', {
-    eager: true,
-  }) as Module;
+  const module = import.meta.glob('../../algorithms/**/*.{ts,tsx,mdx}', { eager: true }) as Module;
 
   for (const path in module) {
-    const modulePath = path.split('/').slice(2);
+    const modulePath = path.split('/').slice(3);
     generateTreeItemRecursively(tree, modulePath, 0);
   }
 
@@ -22,7 +20,7 @@ function loadModuleAndGenerateTreeView() {
 
 const data = loadModuleAndGenerateTreeView();
 
-export const DataStructuresPageRoute = () => {
+export const AlgorithmsPageRoute = () => {
   const handleCheckChange = (item: TreeViewItem, checked: boolean) => {
     console.log(`Item ${item.name} checked:`, checked);
   };
@@ -31,9 +29,11 @@ export const DataStructuresPageRoute = () => {
     <TreeView
       onCheckChange={handleCheckChange}
       iconMap={customIconMap}
-      title="Data Structures"
       menuItems={menuItems}
+      title="Algorithms"
       data={[data]}
     />
   );
 };
+
+export default AlgorithmsPageRoute;
