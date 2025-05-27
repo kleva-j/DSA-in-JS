@@ -14,6 +14,7 @@
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "@base-ui-components/react": "1.0.0-alpha.8",
     "@radix-ui/react-collapsible": "^1.1.10",
     "@radix-ui/react-context-menu": "^2.2.14",
     "@radix-ui/react-hover-card": "^1.1.13",
