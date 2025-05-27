@@ -3,7 +3,7 @@
 import type { TreeViewItem } from '@/components/molecule/tree-item';
 
 import { useState, useRef, useEffect, useCallback, useMemo } from 'react';
-import { ChevronDown, ChevronRight, Search, X } from 'lucide-react';
+import { ListCollapse, ListTreeIcon, Search, X } from 'lucide-react';
 import { TreeItem } from '@/components/molecule/tree-item';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/atoms/button';
@@ -341,7 +341,7 @@ export function TreeView({
     <div className="flex gap-4">
       <div
         ref={treeRef}
-        className="bg-background p-4 rounded border max-w-2xl space-y-4 w-[600px] relative shadow"
+        className="bg-background p-4 rounded-sm border max-w-2xl space-y-4 w-[380px] relative"
       >
         <AnimatePresence mode="wait">
           {selectedIds.size > 0 ? (
@@ -421,18 +421,11 @@ export function TreeView({
               </div>
               {showExpandAll && (
                 <div className="flex gap-2 shrink-0">
-                  <Button variant="ghost" size="sm" className="h-10 px-2" onClick={handleExpandAll}>
-                    <ChevronDown className="h-4 w-4 mr-1" />
-                    Expand All
+                  <Button variant="outline" className="size-10" onClick={handleExpandAll}>
+                    <ListTreeIcon className="size-5 text-muted-foreground" />
                   </Button>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="h-10 px-2"
-                    onClick={handleCollapseAll}
-                  >
-                    <ChevronRight className="h-4 w-4 mr-1" />
-                    Collapse All
+                  <Button onClick={handleCollapseAll} className="size-10" variant="outline">
+                    <ListCollapse className="size-5 text-muted-foreground" />
                   </Button>
                 </div>
               )}

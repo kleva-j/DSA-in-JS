@@ -90,3 +90,17 @@ export const treeViewTestData = [
     ],
   },
 ];
+
+export const levelMap: Record<number, string> = {
+  0: 'region',
+  1: 'store',
+  2: 'department',
+  3: 'item',
+};
+
+export const tree = {
+  id: '1',
+  name: 'Modules',
+  children: [],
+  type: levelMap[0],
+};

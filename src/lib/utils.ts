@@ -1,8 +1,8 @@
 import type { TreeViewItem } from '@/components/molecule/tree-item';
 
 import { clsx, type ClassValue } from 'clsx';
+import { levelMap } from '@/lib/constants';
 import { twMerge } from 'tailwind-merge';
-import { levelMap } from '@/lib/misc';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
