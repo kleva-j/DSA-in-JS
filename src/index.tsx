@@ -13,8 +13,8 @@ const router = createBrowserRouter([
     path: '/',
     Component: App,
     children: [
-      { path: 'algorithms', Component: AlgorithmsPageRoute },
-      { path: 'data-structures', Component: DataStructuresPageRoute },
+      { path: 'algorithms/*', Component: AlgorithmsPageRoute },
+      { path: 'data-structures/*', Component: DataStructuresPageRoute },
     ],
   },
 ]);
