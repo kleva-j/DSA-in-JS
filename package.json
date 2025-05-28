@@ -15,10 +15,13 @@
   },
   "dependencies": {
     "@base-ui-components/react": "1.0.0-alpha.8",
+    "@headless-tree/core": "^1.0.1",
+    "@headless-tree/react": "^1.0.1",
     "@radix-ui/react-collapsible": "^1.1.10",
     "@radix-ui/react-context-menu": "^2.2.14",
     "@radix-ui/react-hover-card": "^1.1.13",
     "@radix-ui/react-slot": "^1.2.2",
+    "@radix-ui/react-tooltip": "^1.2.7",
     "@tailwindcss/vite": "^4.1.6",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
