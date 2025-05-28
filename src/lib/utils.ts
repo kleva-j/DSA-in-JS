@@ -3,6 +3,7 @@ import type { TreeViewItem } from '@/components/molecule/tree-item';
 import { clsx, type ClassValue } from 'clsx';
 import { levelMap } from '@/lib/constants';
 import { twMerge } from 'tailwind-merge';
+import { tree } from '@/lib/constants';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -37,4 +38,16 @@ export function generateTreeItemRecursively(
   if (!isLastComponent) {
     generateTreeItemRecursively(newComponent, pathComponents, currentIndex + 1);
   }
+}
+
+export function loadModulesAndGenerateTreeView() {
+  const dsGlob = import.meta.glob('../data-structures/**/*.{ts,tsx,mdx}', { eager: true });
+  const algGlob = import.meta.glob('../algorithms/**/*.{ts,tsx,mdx}', { eager: true });
+
+  for (const path of Object.keys({ ...dsGlob, ...algGlob })) {
+    const modulePath = path.split('/').slice(1);
+    generateTreeItemRecursively(tree, modulePath, 0);
+  }
+
+  return tree;
 }
