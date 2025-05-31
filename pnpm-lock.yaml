@@ -98,9 +98,6 @@ importers:
       remark-rehype:
         specifier: ^11.1.2
         version: 11.1.2
-      shiki:
-        specifier: ^3.4.2
-        version: 3.4.2
       tailwind-merge:
         specifier: ^3.3.0
         version: 3.3.0
@@ -126,9 +123,6 @@ importers:
       '@eslint/js':
         specifier: ^9.22.0
         version: 9.25.1
-      '@shikijs/transformers':
-        specifier: ^3.4.2
-        version: 3.4.2
       '@types/node':
         specifier: ^22.15.14
         version: 22.15.14
@@ -1467,9 +1461,6 @@ packages:
 
   '@shikijs/themes@3.4.2':
     resolution: {integrity: sha512-qAEuAQh+brd8Jyej2UDDf+b4V2g1Rm8aBIdvt32XhDPrHvDkEnpb7Kzc9hSuHUxz0Iuflmq7elaDuQAP9bHIhg==}
-
-  '@shikijs/transformers@3.4.2':
-    resolution: {integrity: sha512-I5baLVi/ynLEOZoWSAMlACHNnG+yw5HDmse0oe+GW6U1u+ULdEB3UHiVWaHoJSSONV7tlcVxuaMy74sREDkSvg==}
 
   '@shikijs/types@3.4.2':
     resolution: {integrity: sha512-zHC1l7L+eQlDXLnxvM9R91Efh2V4+rN3oMVS2swCBssbj2U/FBwybD1eeLaq8yl/iwT+zih8iUbTBCgGZOYlVg==}
@@ -5071,11 +5062,6 @@ snapshots:
 
   '@shikijs/themes@3.4.2':
     dependencies:
-      '@shikijs/types': 3.4.2
-
-  '@shikijs/transformers@3.4.2':
-    dependencies:
-      '@shikijs/core': 3.4.2
       '@shikijs/types': 3.4.2
 
   '@shikijs/types@3.4.2':

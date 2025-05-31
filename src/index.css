@@ -1,6 +1,8 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
+@plugin "@tailwindcss/typography";
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -116,6 +118,20 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  [data-highlighted-line] {
+    background: rgba(255, 180, 40, 0.1) !important;
+    @apply border-l-4 !border-l-amber-300;
+  }
+
+  [data-highlighted-chars] {
+    @apply bg-zinc-600/50 rounded;
+    box-shadow: 0 0 0 4px rgb(82 82 91 / 0.5);
+  }
+
+  [inert] ::-webkit-scrollbar {
+    display: none;
   }
 }
 

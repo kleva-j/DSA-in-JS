@@ -31,14 +31,13 @@ function ContextMenuRadioGroup({
   return <ContextMenuPrimitive.RadioGroup data-slot="context-menu-radio-group" {...props} />;
 }
 
-function ContextMenuSubTrigger({
-  className,
-  inset,
-  children,
-  ...props
-}: ComponentProps<typeof ContextMenuPrimitive.SubTrigger> & {
+interface ContextMenuSubTriggerProps
+  extends ComponentProps<typeof ContextMenuPrimitive.SubTrigger> {
   inset?: boolean;
-}) {
+}
+
+function ContextMenuSubTrigger(props: ContextMenuSubTriggerProps) {
+  const { className, inset, children, ...itemProps } = props;
   return (
     <ContextMenuPrimitive.SubTrigger
       data-slot="context-menu-sub-trigger"
@@ -47,7 +46,7 @@ function ContextMenuSubTrigger({
         "focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground flex cursor-default items-center rounded-sm px-2 py-1.5 text-sm outline-hidden select-none data-[inset]:pl-8 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className
       )}
-      {...props}
+      {...itemProps}
     >
       {children}
       <ChevronRightIcon className="ml-auto" />
@@ -89,15 +88,13 @@ function ContextMenuContent({
   );
 }
 
-function ContextMenuItem({
-  className,
-  inset,
-  variant = 'default',
-  ...props
-}: ComponentProps<typeof ContextMenuPrimitive.Item> & {
+interface ContextMenuItemProps extends ComponentProps<typeof ContextMenuPrimitive.Item> {
   inset?: boolean;
   variant?: 'default' | 'destructive';
-}) {
+}
+
+function ContextMenuItem(props: ContextMenuItemProps) {
+  const { className, inset, variant, ...itemProps } = props;
   return (
     <ContextMenuPrimitive.Item
       data-slot="context-menu-item"
@@ -107,7 +104,7 @@ function ContextMenuItem({
         "focus:bg-accent focus:text-accent-foreground data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 dark:data-[variant=destructive]:focus:bg-destructive/20 data-[variant=destructive]:focus:text-destructive data-[variant=destructive]:*:[svg]:!text-destructive [&_svg:not([class*='text-'])]:text-muted-foreground relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[inset]:pl-8 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className
       )}
-      {...props}
+      {...itemProps}
     />
   );
 }
@@ -162,13 +159,12 @@ function ContextMenuRadioItem({
   );
 }
 
-function ContextMenuLabel({
-  className,
-  inset,
-  ...props
-}: ComponentProps<typeof ContextMenuPrimitive.Label> & {
+interface ContextMenuLabelProps
+  extends Omit<ComponentProps<typeof ContextMenuPrimitive.Label>, 'inset'> {
   inset?: boolean;
-}) {
+}
+
+function ContextMenuLabel({ className, inset, ...props }: ContextMenuLabelProps) {
   return (
     <ContextMenuPrimitive.Label
       data-slot="context-menu-label"
