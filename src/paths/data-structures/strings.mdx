@@ -1,0 +1,62 @@
+---
+title: Strings
+summary: Strings Primitive Data Structure in JS
+date: 2025-05-29
+author: Michael Obasi
+---
+
+# About Strings
+
+In JavaScript, the textual data is stored as strings. A string is a sequence of characters, and it is one of the primitive data types in JavaScript. The internal format for strings is always UTF-16, it is not tied to the page encoding.
+
+**Special Character**
+
+- `\n` - Newline
+- `\t` - Tab
+- `\r` - Carriage Return
+- `\b` - Backspace
+- `\f` - Form Feed
+- `\\` - Backslash
+- `\'` - Single Quote
+- `\"` - Double Quote
+
+**Strings are immutable in JS**
+Strings can't be changed in JavaScript. It is impossible to change a character.
+Let’s try it to show that it doesn’t work:
+
+```ts
+let str = 'Hi';
+
+str[0] = 'h'; // error
+alert(str[0]); // doesn't work
+```
+
+The usual workaround is to create a whole new string and assign it to str instead of the old one.
+
+**Workaround**
+
+```ts
+let str = 'Hi';
+str = 'h' + str[1]; // create a new string "hI" and assign it to str
+alert(str); // "hI"
+```
+
+---
+
+## Limitations
+
+- Not efficient for large datasets
+- Not suitable for searching in sorted arrays
+- Not recommended for production use
+
+---
+
+## Conclusion
+
+Strings are a simple and easy-to-implement data structure, but it is not the most efficient for large datasets. It is best used for small datasets or when the dataset is not sorted.
+
+---
+
+## References
+
+- [Strings in JS](https://www.geeksforgeeks.org/strings-in-js/)

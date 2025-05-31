@@ -1,0 +1,61 @@
+---
+title: Array
+summary: Array Data Structure in JS
+date: 2025-05-29
+author: Michael Obasi
+---
+
+# About Array
+
+Objects allow you to store keyed collections of values. That’s fine.
+
+But quite often we find that we need an ordered collection, where we have a 1st, a 2nd, a 3rd element and so on. For example, we need that to store a list of something: users, goods, HTML elements etc.
+
+It is not convenient to use an object here, because it provides no methods to manage the order of elements. We can’t insert a new property “between” the existing ones. Objects are just not meant for such use.
+
+An array is a collection of elements of the same type stored in contiguous memory locations. Each element in the array is accessed using an index, which is a non-negative integer representing its position in the array.
+
+---
+
+## Implementation
+
+```ts
+const array = [1, 2, 3, 4, 5];
+```
+
+---
+
+## Analysis
+
+- Time Complexity: O(1)
+- Space Complexity: O(1)
+
+---
+
+## Applications
+
+- Storing a collection of elements
+- Implementing a stack or queue
+- Implementing a priority queue
+- Implementing a hash table
+- Implementing a graph
+
+---
+
+## Limitations
+
+- Not efficient for large datasets
+- Not suitable for searching in sorted arrays
+- Not recommended for production use
+
+---
+
+## Conclusion
+
+Arrays are a simple and easy-to-implement data structure, but it is not the most efficient for large datasets. It is best used for small datasets or when the dataset is not sorted.
+
+---
+
+## References
+
+- [Array in JS](https://www.geeksforgeeks.org/array-in-js/)

@@ -1,0 +1,72 @@
+---
+title: Linear Search
+summary: Linear Search Algorithm in JS
+date: 2025-05-29
+author: Michael Obasi
+---
+
+### About Linear Search
+
+Linear search is a simple search algorithm that sequentially checks each element of a list until the target element is found or the list is exhausted.
+
+---
+
+### Implementation
+
+```ts
+function linearSearch(arr: number[], target: number): number {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === target) {
+      return i;
+    }
+  }
+  return -1;
+}
+```
+
+---
+
+### Analysis
+
+- Time Complexity: O(n)
+- Space Complexity: O(1)
+
+---
+
+### Example
+
+```ts
+const arr = [1, 2, 3, 4, 5];
+const target = 3;
+const result = linearSearch(arr, target);
+console.log(result); // Output: 2
+```
+
+---
+
+### Applications
+
+- Searching for an element in an unsorted array
+- Finding the index of a target element
+- Implementing a basic search algorithm
+
+---
+
+### Limitations
+
+- Not efficient for large datasets
+- Not suitable for searching in sorted arrays
+- Not recommended for production use
+
+---
+
+### Conclusion
+
+Linear search is a simple and easy-to-implement search algorithm, but it is not the most efficient for large datasets. It is best used for small datasets or when the dataset is not sorted.
+
+---
+
+### References
+
+- [Linear Search Algorithm](https://www.geeksforgeeks.org/linear-search/)
+- [Linear Search Algorithm in JS](https://www.geeksforgeeks.org/linear-search-algorithm-in-js/)
