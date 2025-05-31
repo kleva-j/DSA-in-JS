@@ -1,0 +1,11 @@
+{
+  "algorithms": {
+    "binary-search": ["56447bd23e1f6feb55cd848f303318d439a9c8831d67f49d2438013cd2949cf1"],
+    "jump-search": ["adcf8490c56f21db16661ead766b36c09d03a1ea26d454c6c1e05698ae825a4d"],
+    "linear-search": ["ce932f7e72b9a041a6a3163bd60c629e935ea59aff77d4f87a6d21627691fc75"]
+  },
+  "dataStructures": {
+    "array": ["616be9a57c7cd0efd4ac3423766da6a8623af7363bff2318448a90fbc5d88840"],
+    "strings": ["e8bfea4051d8ae69db7f63495db26d79c777fbf98de5961eff9a600cf7a75c18"]
+  }
+}
